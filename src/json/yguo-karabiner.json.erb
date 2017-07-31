@@ -1,0 +1,78 @@
+{
+    "title": "yguo configurations",
+    "rules": [
+        {
+            "description": "right_command to backspace",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("right_command", [], ["any"]) %>,
+                    "to": <%= to([["right_command"]]) %>,
+                    "to_if_alone": <%= to([["delete_or_backspace"]]) %>
+                }
+            ]
+        },
+        {
+            "description": "right_command to enter",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("right_command", [], ["any"]) %>,
+                    "to": <%= to([["right_command"]]) %>,
+                    "to_if_alone": <%= to([["return_or_enter"]]) %>
+                }
+            ]
+        },
+        {
+            "description": "left_command to backspace",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("left_command", [], ["any"]) %>,
+                    "to": <%= to([["left_command"]]) %>,
+                    "to_if_alone": <%= to([["delete_or_backspace"]]) %>
+                }
+            ]
+        },
+        {
+            "description": "space-cadet shift key",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("left_shift", [], []) %>,
+                    "to": <%= to([["left_shift"]]) %>,
+                    "to_if_alone": <%= to([["9", ["left_shift"]]]) %>
+                },
+                {
+                    "type": "basic",
+                    "from": <%= from("right_shift", [], []) %>,
+                    "to": <%= to([["right_shift"]]) %>,
+                    "to_if_alone": <%= to([["0", ["right_shift"]]]) %>
+                }
+            ]
+        },
+        {
+            "description": "Extra emacs key bindings",
+            "manipulators": [
+                {
+                    "description": "Change control+u to delete-to-beginning-of-line",
+                    "type": "basic",
+                    "from": <%= from("u", ["left_control"], ["caps_lock"]) %>,
+                    "to": <%= to([["a", ["left_control", "left_shift"]], ["delete_or_backspace"], ["vk_none"]]) %>,
+                    "conditions": [
+                        <%= frontmost_application_unless(["emacs", "terminal", "iterm2"]) %>
+                    ]
+                },
+                {
+                    "description": "Change control+w to option+delete",
+                    "type": "basic",
+                    "from": <%= from("w", ["left_control"], ["caps_lock"]) %>,
+                    "to": <%= to([["delete_or_backspace", ["left_option"]]]) %>,
+                    "conditions": [
+                        <%= frontmost_application_unless(["emacs", "terminal", "iterm2"]) %>
+                    ]
+                }
+            ]
+        }
+    ]
+}
