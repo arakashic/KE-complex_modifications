@@ -52,6 +52,21 @@
             ]
         },
         {
+            "description": "thumb trainer",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("return_or_enter", [], ["any"]) %>,
+                    "to": <%= to([[";", ["left_shift"]]]) %>
+                },
+                {
+                    "type": "basic",
+                    "from": <%= from("delete_or_backspace", [], ["any"]) %>,
+                    "to": <%= to([["2", ["left_shift"]]]) %>
+                }
+            ]
+        },
+        {
             "description": "Extra emacs key bindings",
             "manipulators": [
                 {
