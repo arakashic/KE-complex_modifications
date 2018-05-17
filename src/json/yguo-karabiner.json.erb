@@ -52,6 +52,17 @@
             ]
         },
         {
+            "description": "control for escape",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("left_control", [], []) %>,
+                    "to": <%= to([["left_control"]]) %>,
+                    "to_if_alone": <%= to([["escape"]]) %>
+                }
+            ]
+        },
+        {
             "description": "thumb trainer",
             "manipulators": [
                 {
