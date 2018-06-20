@@ -5,6 +5,9 @@
       "id": "modifier-keys",
       "files": [
         {
+          "path": "json/Photoshop_Windows_keymaps.json"
+        },
+        {
           "path": "json/command_ctrl_for_windows_keyboard.json"
         },
         {
@@ -262,6 +265,9 @@
           "path": "json/korean_pc.json"
         },
         {
+          "path": "json/korean_won_to_backtick.json"
+        },
+        {
           "path": "json/russian.json"
         }
       ]
@@ -358,6 +364,12 @@
         },
         {
           "path": "json/disable_cmd_f1_screen_mirroring.json"
+        },
+        {
+          "path": "json/rotate_left_modifiers.json"
+        },
+        {
+        	"path": "json/sleep-monitor.json"
         }
       ]
     },
@@ -435,6 +447,9 @@
         },
         {
           "path": "json/change_command_l_and_backslash.json"
+        },
+        {
+          "path": "json/save_pinky_fingers.json"
         }
       ]
     }
@@ -455,6 +470,9 @@
         },
         {
           "path": "json/example_keyboard_type.json"
+        },
+        {
+          "path": "json/example_japanese_nicola.json"
         }
       ]
     },
