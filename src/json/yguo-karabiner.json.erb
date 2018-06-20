@@ -72,6 +72,11 @@
                 },
                 {
                     "type": "basic",
+                    "from": <%= from("backslash", [], ["any"]) %>,
+                    "to": <%= to([["semicolon", ["shift"]]]) %>
+                },
+                {
+                    "type": "basic",
                     "from": <%= from("delete_or_backspace", [], ["any"]) %>,
                     "to": <%= to([["2", ["left_shift"]]]) %>
                 }
